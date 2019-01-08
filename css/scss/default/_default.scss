@@ -1,0 +1,57 @@
+body,
+div,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+input,
+button {
+	padding: 0;
+	margin: 0;
+	color: $mainColor;
+	font-family: $mainFont;
+	font-size: 16px;
+	letter-spacing: 0.3px;
+}
+body {
+	background-color: $white;
+}
+.container {
+	height: 100%;
+	max-width: 1024px;
+	margin: auto;
+	padding: 0 30px;
+}
+a,
+li {
+	text-decoration: none !important;
+	list-style-type: none;
+}
+input,
+button {
+	  outline: 0 !important;
+}
+.box-logo {
+	display: flex;
+	align-items: center;
+
+	&__logo {
+		width: 44.47px;
+		height: 48px;
+		margin-right: 20px;
+	}
+
+	&__text {
+		font-family: $sansSerif;
+		font-size: 17px;
+		color: $darkColor;
+
+	}
+}
+

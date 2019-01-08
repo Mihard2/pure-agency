@@ -1,0 +1,244 @@
+footer {
+  background: linear-gradient(to top, #292f42 50%, $white 50%, $white 100%);
+  max-width: 1440px;
+  margin: auto;
+
+  @include mq(xs) {
+    background: linear-gradient(to top, #292F42 90%, $white 90%,
+      $white 100%);
+  }
+
+  .footer {
+
+    a,
+    p {
+      color: $white;
+    }
+
+    display: block;
+    margin: auto;
+    min-height: 500px;
+    max-width: 1440px;
+    width: 100%;
+    background: #292f42;
+    background: url(../img/bgFooter.jpg) center top no-repeat;
+    background-size: contain;
+
+    &-content {
+      padding-top: 384px;
+      display: flex;
+
+      @include mq(lg) {
+        flex-direction: column;
+        padding-top: 285px;
+      }
+
+      .feedback {
+        margin-right: 125px;
+
+        @include mq(lg) {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          margin-right: 0;
+        }
+
+        @include mq(xs) {
+          flex-direction: column-reverse;
+        }
+
+        .wrap {
+          max-width: 385px;
+          width: 100%;
+
+          @include mq(md) {
+            max-width: 344px;
+          }
+
+          @include mq(xs) {
+            margin-bottom: 24px;
+          }
+        }
+
+        &__subtitle {
+          font-family: $serifTypefaces;
+          font-size: 24px;
+        }
+
+        &-form {
+          position: relative;
+          width: 100%;
+          margin: 28px 0;
+
+          &__input,
+          &__button {
+            border: none;
+            outline: none;
+          }
+
+          &__input {
+            width: 100%;
+            height: 56px;
+            padding-left: 10px;
+            background: #fdfdfd;
+            border: 1px solid rgba(41, 47, 66, 0.1);
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            &::placeholder {
+              font-size: 14px;
+            }
+          }
+
+          &__button {
+            height: 56px;
+            width: 56px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background: linear-gradient(270deg, #86be26 1.79%, #86be26 100%);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:before {
+              content: url(../img/arrowRightWhite.png);
+            }
+          }
+        }
+
+        &__text {
+          margin-top: 28px;
+          line-height: 24px;
+
+          @include mq(xs) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      margin-top: 55px;
+
+      @include mq(xs) {
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 180px;
+
+        @include mq(lg) {
+          width: 222px;
+        }
+
+        @include mq(xs) {
+          width: 100%;
+        }
+
+        &__subtitle {
+          display: flex;
+          margin: 24px 0;
+          justify-content: space-between;
+
+          &-text {
+            font-size: 20px;
+            line-height: 24px;
+            font-family: $serifTypefaces;
+            font-weight: bold;
+            color: $white;
+          }
+
+          &.active {
+            .icon {
+              &:before {
+                background: $white;
+              }
+
+              &:after {
+                background: $darkColor;
+                width: 0;
+              }
+            }
+          }
+
+          .icon {
+            display: none;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 3px;
+            transform: translateY(-50%);
+
+            @include mq(xs) {
+              display: block;
+              margin-top: 12px;
+            }
+
+            &:before,
+            &:after {
+              content: "";
+              width: 23px;
+              height: 3px;
+              background: $white;
+              position: absolute;
+              border-radius: 3px;
+              left: 50%;
+              top: 50%;
+              transition: 0.3s ease-in-out;
+              transform: translate(-50%, -50%);
+            }
+
+            &:after {
+              transform: translate(-50%, -50%) rotate(90deg);
+              z-index: -1;
+            }
+          }
+        }
+
+        &-lists {
+          @include mq(xs) {
+            display: none;
+          }
+
+          &__list {
+            padding-bottom: 8px;
+
+            a {
+              font-size: 14px;
+              line-height: 24px;
+              font-family: $sansSerif;
+
+              &:hover,
+              &:active {
+                color: $green;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      display: block;
+      text-align: center;
+      margin-top: 200px;
+      padding: 16px;
+
+      @include mq(lg) {
+        margin-top: 50px;
+      }
+
+      p {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 24px;
+
+        .colorText {
+          color: $green;
+        }
+      }
+    }
+  }
+}
