@@ -19,6 +19,8 @@
         @include mq(xs) {
             width: 100%;
             border-bottom: 1px solid $darkColor;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
         }
 
         .sidebar-nav__items {
